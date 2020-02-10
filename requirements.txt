@@ -1,0 +1,6 @@
+dotenv
+networkx
+sanic
+aiohttp
+pandas
+sanic-cors

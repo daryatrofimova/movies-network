@@ -1,0 +1,52 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: Bacon  / any actor connection number API
+  description: Return Bacon number /  number of connections between any two actors
+host: '%host%'
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  '/bacon':
+    get:
+      summary: Bacon number
+      description: Return Bacon number for a given actor
+      parameters:
+        - name: actor
+          description: Actor name
+          in: query
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK.
+          schema:
+            $ref: '#/definitions/Item'
+
+  '/any_actor_connection_number':
+      get:
+        summary: Any actor connection number
+        description: Bacon number but calculated between any two actors
+        parameters:
+          - name: actor
+            description: Actor name
+            in: query
+            required: true
+            type: string
+          - name: actor2
+            description: Actor 2 name
+            in: query
+            required: true
+            type: string
+        responses:
+          200:
+            description: OK.
+            schema:
+              $ref: '#/definitions/Item'
+definitions:
+  Item:
+    type: object
