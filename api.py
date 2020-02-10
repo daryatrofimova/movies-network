@@ -10,7 +10,7 @@ from network.graph import ShortestPath
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
 
-from statsd import StatsClient
+
 api = Sanic(__name__)
 CORS(api, automatic_options=True)
 
